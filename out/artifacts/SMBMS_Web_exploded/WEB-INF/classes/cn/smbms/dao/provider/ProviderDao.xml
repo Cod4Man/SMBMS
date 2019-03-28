@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.smbms.dao.provider.ProviderDao">
+    <!--增加供应商-->
+    <insert id="add" parameterType="cn.smbms.pojo.Provider">
+        insert into smbms_provider
+        (proCode, proName, proDesc, proContact, proPhone, proAddress, proFax,
+        createdBy, creationDate, modifyDate, modifyBy)
+        values (#{proCode}, #{proName}, #{proDesc}, #{proContact}, #{proPhone}, #{proAddress}, #{proFax},
+        #{createdBy}, #{creationDate}, #{modifyDate}, #{modifyBy})
+    </insert>
+    <delete id="deleteProviderById">
+        delete from smbms_provider where id = #{delId}
+    </delete>
+    <select id="getProviderList" resultType="cn.smbms.pojo.Provider">
+        select * from smbms_provider
+        <where>
+            <if test="proCode != null and proCode != ''">
+                and proCode like '%${proCode}%'
+            </if>
+            <if test="proName != null and proName != ''">
+                and proName like '%${proName}%'
+            </if>
+        </where>
+    </select>
+    <select id="getProviderById" resultType="cn.smbms.pojo.Provider">
+        select * from smbms_provider
+        <where>
+            <if test="id != null and id !='' and id >0">
+                id =#{id}
+            </if>
+        </where>
+    </select>
+    <!--修改用户信息-->
+    <update id="modify" >
+        update smbms_provider
+        <trim suffixOverrides="," >
+            <if test="proCode != null and proCode != ''">
+                set proCode = #{proCode},
+            </if>
+            <if test="proName!= null and proName != ''">
+                proName = #{proName},
+            </if>
+            <if test="proDesc!= null and proDesc != ''">
+                proDesc = #{proDesc},
+            </if>
+            <if test="proContact!= null and proContact != ''">
+                proContact = #{proContact},
+            </if>
+            <if test="proPhone != null and proPhone != ''">
+                proPhone = #{proPhone},
+            </if>
+            <if test="proAddress != null and proAddress != ''">
+                proAddress = #{proAddress},
+            </if>
+            <if test="proFax!= null and proFax != ''">
+                proFax = #{proFax},
+            </if>
+            <if test="createdBy!= null and createdBy != ''">
+                createdBy = #{createdBy},
+            </if>
+            <if test=" creationDate!= null">
+                creationDate = #{creationDate},
+            </if>
+            <if test="modifyBy!= null and modifyBy != ''">
+                modifyBy = #{modifyBy},
+            </if>
+            <if test="modifyDate!= null">
+                modifyDate = #{modifyDate},
+            </if>
+        </trim>
+        where id = #{id}
+    </update>
+</mapper>
