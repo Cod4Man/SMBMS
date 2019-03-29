@@ -1,5 +1,7 @@
 package cn.smbms.pojo;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -11,10 +13,12 @@ public class Bill {
 	private String productUnit; //商品单位
 	private BigDecimal productCount; //商品数量 
 	private BigDecimal totalPrice; //总金额
-	private Integer isPayment; //是否支付 
+	private Integer isPayment; //是否支付
 	private Integer createdBy; //创建者
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date creationDate; //创建时间
 	private Integer modifyBy; //更新者
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date modifyDate;//更新时间
 	private Integer providerId; //供应商ID
 

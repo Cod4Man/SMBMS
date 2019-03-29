@@ -23,6 +23,14 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!--全局异常处理-->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+    <property name="exceptionMappings">
+        <props>
+            <prop key="java.lang.RuntimeException">error(异常展示页面)</prop>
+        </props>
+    </property>
+</bean>
     <!--过滤资源路径-->
     <mvc:resources mapping="/images/**" location="/images/"/>
     <mvc:resources mapping="/js/**" location="/js/"/>

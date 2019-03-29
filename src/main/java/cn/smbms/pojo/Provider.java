@@ -1,5 +1,7 @@
 package cn.smbms.pojo;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,8 +16,10 @@ public class Provider implements Serializable {
 	private String proAddress; //供应商地址
 	private String proFax; //供应商传真
 	private Integer createdBy; //创建者
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date creationDate; //创建时间
 	private Integer modifyBy; //更新者
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date modifyDate;//更新时间
 	public Integer getId() {
 		return id;

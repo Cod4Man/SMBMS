@@ -11,6 +11,7 @@ import com.mysql.jdbc.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -47,37 +48,18 @@ public class UserController {
      * @date 2019/3/28
      */
     @RequestMapping(value = "/goPwdmodify")
-    public String goPwdmodify() {
+    public String goPwdmodify(@ModelAttribute("user") User user) {
         return "jsp/pwdmodify";
     }
 
     @RequestMapping(value = "/goUseradd")
-    public String goUseradd() {
+    public String goUseradd(@ModelAttribute("user") User user) {
         return "jsp/useradd";
     }
 
     //业务========================
     @RequestMapping(value = "/modifyexe")
-    public String modifyexe(@RequestParam String uid,
-                            @RequestParam String userName,
-                            @RequestParam String gender,
-                            @RequestParam String birthday,
-                            @RequestParam String phone,
-                            @RequestParam String address,
-                            @RequestParam String userRole,
-                                HttpSession session) {
-        User user = new User();
-        user.setId(Integer.valueOf(uid));
-        user.setUserName(userName);
-        user.setGender(Integer.valueOf(gender));
-        try {
-            user.setBirthday(new SimpleDateFormat("yyyy-MM-dd").parse(birthday));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        user.setPhone(phone);
-        user.setAddress(address);
-        user.setUserRole(Integer.valueOf(userRole));
+    public String modifyexe(User user, HttpSession session) {
         user.setModifyBy(((User)session.getAttribute(Constants.USER_SESSION)).getId());
         user.setModifyDate(new Date());
         if(userService.modify(user)){
@@ -110,45 +92,15 @@ public class UserController {
     }
     /**
      *  添加用户
-     * @param userCode
-     * @param userName
-     * @param userPassword
-     * @param gender
-     * @param birthday
-     * @param phone
-     * @param address
-     * @param userRole
      * @param session
-     * @param model
      * @return java.lang.String
      * @author zhj
      * @creed: Talk is cheap,show me the code
      * @date 2019/3/28
      */
     @RequestMapping(value = "/add")
-    public String add(@RequestParam String userCode,
-                                  @RequestParam String userName,
-                                  @RequestParam String userPassword,
-                                  @RequestParam String gender,
-                                  @RequestParam String birthday,
-                                  @RequestParam String phone,
-                                  @RequestParam String address,
-                                  @RequestParam String userRole,
-                                    HttpSession session, Model model) {
+    public String add(User user, HttpSession session) {
         System.out.println("add()================");
-        User user = new User();
-        user.setUserCode(userCode);
-        user.setUserName(userName);
-        user.setUserPassword(userPassword);
-        user.setAddress(address);
-        try {
-            user.setBirthday(new SimpleDateFormat("yyyy-MM-dd").parse(birthday));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        user.setGender(Integer.valueOf(gender));
-        user.setPhone(phone);
-        user.setUserRole(Integer.valueOf(userRole));
         user.setCreationDate(new Date());
         user.setCreatedBy(((User)session.getAttribute(Constants.USER_SESSION)).getId());
         if(userService.add(user)){

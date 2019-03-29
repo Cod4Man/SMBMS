@@ -14,6 +14,7 @@ import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -52,11 +53,11 @@ public class BillController {
 
     //页面跳转
     @RequestMapping(value = "/gobilladd")
-    public String goBillAdd() {
+    public String goBillAdd(@ModelAttribute("bill") Bill bill) {
         return "jsp/billadd";
     }
     @RequestMapping(value = "/goModify")
-    public String goModify(@RequestParam String billid, Model model) {
+    public String goModify(@ModelAttribute("bill") Bill bill2, @RequestParam String billid, Model model) {
         String id = billid;
         if (!StringUtils.isNullOrEmpty(id)) {
             Bill bill = billService.getBillById(id);
@@ -115,14 +116,6 @@ public class BillController {
 
     /**
      * 添加订单
-     * @param billCode
-     * @param productName
-     * @param productDesc
-     * @param productUnit
-     * @param productCount
-     * @param totalPrice
-     * @param providerId
-     * @param isPayment
      * @param session
      * @param model
      * @return java.lang.String
@@ -131,24 +124,9 @@ public class BillController {
      * @date 2019/3/28
      */
     @RequestMapping(value = "/billadd")
-    public String add(@RequestParam String billCode,
-                                        @RequestParam String productName,
-                                      @RequestParam String productDesc,
-                                      @RequestParam String productUnit,
-                                      @RequestParam String productCount,
-                                      @RequestParam String totalPrice,
-                                      @RequestParam String providerId,
-                                      @RequestParam String isPayment,
-                                  HttpSession session, Model model) {
-        Bill bill = new Bill();
-        bill.setBillCode(billCode);
-        bill.setProductName(productName);
-        bill.setProductDesc(productDesc);
-        bill.setProductUnit(productUnit);
-        bill.setProductCount(new BigDecimal(productCount).setScale(2,BigDecimal.ROUND_DOWN));
-        bill.setIsPayment(Integer.parseInt(isPayment));
-        bill.setTotalPrice(new BigDecimal(totalPrice).setScale(2,BigDecimal.ROUND_DOWN));
-        bill.setProviderId(Integer.parseInt(providerId));
+    public String add(Bill bill, HttpSession session, Model model) {
+        bill.setProductCount(new BigDecimal(bill.getProductCount() + "").setScale(2,BigDecimal.ROUND_DOWN));
+        bill.setTotalPrice(new BigDecimal(bill.getTotalPrice() + "").setScale(2,BigDecimal.ROUND_DOWN));
         bill.setCreatedBy(((User)session.getAttribute(Constants.USER_SESSION)).getId());
         bill.setCreationDate(new Date());
         boolean flag = false;
@@ -234,30 +212,11 @@ System.out.println("listJson===" + JSONArray.toJSONString(providerList));
         return "jsp/billview";
     }
     @RequestMapping(value = "/modify")
-    public String modify(@RequestParam String id,
-                         @RequestParam String productName,
-                         @RequestParam String billCode,
-                         @RequestParam String productDesc,
-                         @RequestParam String productUnit,
-                         @RequestParam String productCount,
-                         @RequestParam String totalPrice,
-                         @RequestParam String providerId,
-                         @RequestParam String isPayment,
-                         Model model, HttpSession session
+    public String modify(Bill bill, Model model, HttpSession session
                          ) {
         System.out.println("modify===============");
-
-        Bill bill = new Bill();
-        bill.setId(Integer.valueOf(id));
-        bill.setBillCode(billCode);
-        bill.setProductName(productName);
-        bill.setProductDesc(productDesc);
-        bill.setProductUnit(productUnit);
-        bill.setProductCount(new BigDecimal(productCount).setScale(2,BigDecimal.ROUND_DOWN));
-        bill.setIsPayment(Integer.parseInt(isPayment));
-        bill.setTotalPrice(new BigDecimal(totalPrice).setScale(2,BigDecimal.ROUND_DOWN));
-        bill.setProviderId(Integer.parseInt(providerId));
-
+        bill.setProductCount(new BigDecimal(bill.getProductCount() + "").setScale(2,BigDecimal.ROUND_DOWN));
+        bill.setTotalPrice(new BigDecimal(bill.getTotalPrice() + "").setScale(2,BigDecimal.ROUND_DOWN));
         bill.setModifyBy(((User)session.getAttribute(Constants.USER_SESSION)).getId());
         bill.setModifyDate(new Date());
         boolean flag = false;

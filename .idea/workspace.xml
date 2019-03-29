@@ -58,67 +58,111 @@
         <counts>
           <entry key="project.closed" value="8" />
           <entry key="project.open.time.22" value="1" />
-          <entry key="project.open.time.3" value="4" />
+          <entry key="project.open.time.3" value="5" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.64" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="3" />
           <entry key="css" value="1" />
-          <entry key="java" value="167" />
+          <entry key="java" value="174" />
           <entry key="js" value="26" />
-          <entry key="jsp" value="51" />
+          <entry key="jsp" value="52" />
           <entry key="log" value="2" />
           <entry key="properties" value="8" />
           <entry key="sql" value="1" />
-          <entry key="xml" value="66" />
+          <entry key="xml" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="3" />
           <entry key="CSS" value="1" />
-          <entry key="JAVA" value="167" />
-          <entry key="JSP" value="51" />
+          <entry key="JAVA" value="174" />
+          <entry key="JSP" value="52" />
           <entry key="JavaScript" value="26" />
           <entry key="Log" value="2" />
           <entry key="Properties" value="8" />
           <entry key="Scratch" value="1" />
-          <entry key="XML" value="66" />
+          <entry key="XML" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="5" />
-          <entry key="ft" value="4" />
-          <entry key="java" value="8530" />
+          <entry key="ft" value="6" />
+          <entry key="java" value="8918" />
           <entry key="js" value="371" />
-          <entry key="jsp" value="352" />
+          <entry key="jsp" value="354" />
           <entry key="properties" value="17" />
           <entry key="txt" value="5" />
-          <entry key="xml" value="1673" />
+          <entry key="xml" value="1688" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8530" />
-          <entry key="JSP" value="352" />
+          <entry key="JAVA" value="8918" />
+          <entry key="JSP" value="354" />
           <entry key="JavaScript" value="371" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="Properties" value="17" />
           <entry key="SQL" value="61" />
-          <entry key="VTL" value="4" />
-          <entry key="XML" value="1612" />
+          <entry key="VTL" value="6" />
+          <entry key="XML" value="1627" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc-servlet.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/controller/bill/BillController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-133">
+              <caret line="85" column="33" lean-forward="true" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#totalPriceBigDecimal#0;class#BillController#0" />
+                <element signature="e#1759#1760#0" expanded="true" />
+                <element signature="e#1795#1796#0" expanded="true" />
+                <element signature="docComment;method#query#0;class#BillController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebRoot/jsp/usermodify.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/pojo/Bill.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-40">
+              <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -134,7 +178,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>删除</find>
       <find>desc</find>
       <find>add f</find>
       <find>productName</find>
@@ -155,7 +198,6 @@
       <find>deluser</find>
       <find>pro</find>
       <find>query</find>
-      <find>add</find>
       <find>delprovider</find>
       <find>view</find>
       <find>view &amp; modify</find>
@@ -164,15 +206,13 @@
       <find>getBillCountByProviderId</find>
       <find>dele</find>
       <find>modify</find>
+      <find>add</find>
+      <find>provider2</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/dao/user/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/dao/BaseDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/user/UserServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/smbms/servlet/provider/ProviderServlet.java" />
@@ -187,7 +227,6 @@
         <option value="$PROJECT_DIR$/WebRoot/login.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/error.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/cn/smbms/controller/user/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/springmvc-servlet.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/smbms/servlet/user/LoginServlet.java" />
         <option value="$PROJECT_DIR$/WebRoot/js/billadd.js" />
@@ -198,7 +237,6 @@
         <option value="$PROJECT_DIR$/WebRoot/jsp/billmodify.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/jsp/billadd.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/cn/smbms/dao/bill/BillDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/controller/bill/BillController.java" />
         <option value="$PROJECT_DIR$/WebRoot/jsp/pwdmodify.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/js/pwdmodify.js" />
         <option value="$PROJECT_DIR$/WebRoot/jsp/useradd.jsp" />
@@ -206,20 +244,26 @@
         <option value="$PROJECT_DIR$/WebRoot/js/useradd.js" />
         <option value="$PROJECT_DIR$/WebRoot/js/usermodify.js" />
         <option value="$PROJECT_DIR$/WebRoot/jsp/userview.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/jsp/usermodify.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/cn/smbms/dao/user/UserDao.xml" />
         <option value="$PROJECT_DIR$/WebRoot/jsp/userlist.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/js/userlist.js" />
         <option value="$PROJECT_DIR$/src/main/java/cn/smbms/service/user/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/controller/user/UserController.java" />
         <option value="$PROJECT_DIR$/WebRoot/jsp/common/head.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/jsp/provideradd.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/jsp/providermodify.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/jsp/providerlist.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/controller/provider/ProviderController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/smbms/service/provider/ProviderServiceImpl.java" />
         <option value="$PROJECT_DIR$/WebRoot/js/providerlist.js" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext-mybatis.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/springmvc-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/pojo/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/controller/user/UserController.java" />
+        <option value="$PROJECT_DIR$/WebRoot/jsp/usermodify.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/pojo/Role.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/pojo/Provider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/pojo/Bill.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/controller/provider/ProviderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/smbms/controller/bill/BillController.java" />
       </list>
     </option>
   </component>
@@ -265,7 +309,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="732" />
     <option name="y" value="87" />
     <option name="width" value="594" />
@@ -290,7 +334,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -300,14 +344,96 @@
             </path>
             <path>
               <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="smbms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="smbms" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="smbms" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="bill" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="smbms" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="smbms" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -322,7 +448,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -410,53 +536,6 @@
       <option name="MAIN_CLASS_NAME" value="user.UserServiceTest" />
       <option name="METHOD_NAME" value="userLogin" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="SMBMS_BY_SSM" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="SMBMS_BY_SSM" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -570,6 +649,7 @@
       <workItem from="1553601617202" duration="3155000" />
       <workItem from="1553688969053" duration="7759000" />
       <workItem from="1553733128578" duration="37242000" />
+      <workItem from="1553825573648" duration="4831000" />
     </task>
     <servers />
   </component>
@@ -606,7 +686,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75665000" />
+    <option name="totallyTimeSpent" value="80496000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -619,9 +699,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="746" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49275362" visible="true" weight="0.23146747" />
-      <window_info id="Structure" order="1" sideWeight="0.5072464" side_tool="true" weight="0.23146747" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49114332" visible="true" weight="0.23524962" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.50885665" side_tool="true" visible="true" weight="0.23524962" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -630,7 +711,7 @@
       <window_info id="Web" order="7" sideWeight="0.37037036" side_tool="true" weight="0.23146747" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.6698873" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.8856683" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -697,51 +778,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/servlet/bill/BillServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="82" column="57" selection-end-line="269" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/jsp/billview.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="62" lean-forward="true" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/jsp/billadd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="64" column="91" selection-start-line="64" selection-start-column="91" selection-end-line="64" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/controller/bill/BillController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="236" column="49" lean-forward="true" selection-start-line="236" selection-start-column="49" selection-end-line="236" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#totalPriceBigDecimal#0;class#BillController#0" />
-            <element signature="e#1722#1723#0" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="docComment;method#query#0;class#BillController#0" />
-            <element signature="e#1477#1487#0" expanded="true" />
-            <element signature="docComment;method#add#0;class#BillController#0" />
-            <element signature="e#7031#7041#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/jsp/billmodify.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" column="67" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/js/billlist.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-349">
@@ -853,13 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/jsp/usermodify.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="44" column="21" lean-forward="true" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/dao/user/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -918,17 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1100">
           <caret line="55" column="41" lean-forward="true" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/controller/user/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="100" column="28" lean-forward="true" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#pwdmodify#0;class#UserController#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1007,18 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/controller/provider/ProviderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="205" column="31" lean-forward="true" selection-start-line="205" selection-start-column="31" selection-end-line="205" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/dao/provider/ProviderDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -1063,13 +1069,99 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext-mybatis.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
           <caret line="32" column="11" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/pojo/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/pojo/Provider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/jsp/usermodify.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/pojo/Bill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/controller/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="63" column="39" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1416#1417#0" expanded="true" />
+            <element signature="e#1454#1455#0" expanded="true" />
+            <element signature="e#1529#1530#0" expanded="true" />
+            <element signature="e#1565#1566#0" expanded="true" />
+            <element signature="docComment;method#pwdmodify#0;class#UserController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/controller/provider/ProviderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1340#1341#0" expanded="true" />
+            <element signature="e#1380#1381#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/smbms/controller/bill/BillController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="85" column="33" lean-forward="true" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#totalPriceBigDecimal#0;class#BillController#0" />
+            <element signature="e#1759#1760#0" expanded="true" />
+            <element signature="e#1795#1796#0" expanded="true" />
+            <element signature="docComment;method#query#0;class#BillController#0" />
+          </folding>
         </state>
       </provider>
     </entry>

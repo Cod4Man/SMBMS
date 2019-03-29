@@ -3,22 +3,18 @@ package cn.smbms.controller.provider;
 import cn.smbms.pojo.Provider;
 import cn.smbms.pojo.User;
 import cn.smbms.service.provider.ProviderService;
-import cn.smbms.service.provider.ProviderServiceImpl;
 import cn.smbms.tools.Constants;
-import com.alibaba.fastjson.JSONArray;
 import com.mysql.jdbc.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -44,7 +40,7 @@ public class ProviderController {
      * @date 2019/3/28
      */
     @RequestMapping(value = "goProviderAdd")
-    public String goProviderAdd() {
+    public String goProviderAdd(@ModelAttribute("provider") Provider provider) {
         return "jsp/provideradd";
     }
 
@@ -52,32 +48,11 @@ public class ProviderController {
 
     /**
      *  修改供应商操作
-     * @param proContact
-     * @param proPhone
-     * @param proAddress
-     * @param proFax
-     * @param proDesc
-     * @param id
      * @param session
      * @return
      */
     @RequestMapping(value = "/domodify")
-    public String domodify(@RequestParam String  proContact,
-                           @RequestParam String  proPhone,
-                           @RequestParam String  proCode,
-                           @RequestParam String  proAddress,
-                           @RequestParam String  proFax,
-                           @RequestParam String  proDesc,
-                           @RequestParam String  id,
-            HttpSession session) {
-        Provider provider = new Provider();
-        provider.setId(Integer.valueOf(id));
-        provider.setProCode(proCode);
-        provider.setProContact(proContact);
-        provider.setProPhone(proPhone);
-        provider.setProFax(proFax);
-        provider.setProAddress(proAddress);
-        provider.setProDesc(proDesc);
+    public String domodify(Provider provider, HttpSession session) {
         provider.setModifyBy(((User)session.getAttribute(Constants.USER_SESSION)).getId());
         provider.setModifyDate(new Date());
         boolean flag = false;
@@ -99,8 +74,10 @@ public class ProviderController {
      * @date 2019/3/28
      */
     @RequestMapping(value = {"/view","/modify"})
-    public String getProviderById(@RequestParam String proid,
-                                    @RequestParam(required = false) String method, Model model) {
+    public String getProviderById(@ModelAttribute("provider") Provider provider2,
+                                                            @RequestParam String proid,
+                                                            @RequestParam(required = false) String method,
+                                                            Model model) {
         System.out.println("view & modify");
         if(!StringUtils.isNullOrEmpty(proid)){
             Provider provider = providerService.getProviderById(proid);
@@ -114,13 +91,6 @@ public class ProviderController {
     }
     /**
      *  处理增加供应商方法
-     * @param proCode
-     * @param proName
-     * @param proContact
-     * @param proPhone
-     * @param proAddress
-     * @param proFax
-     * @param proDesc
      * @param session
      * @return java.lang.String
      * @author zhj
@@ -128,22 +98,7 @@ public class ProviderController {
      * @date 2019/3/28
      */
     @RequestMapping(value = "/add")
-    public String addProvider(@RequestParam String proCode,
-                              @RequestParam String proName,
-                              @RequestParam String proContact,
-                              @RequestParam String proPhone,
-                              @RequestParam String proAddress,
-                              @RequestParam String proFax,
-                              @RequestParam String proDesc,
-                              HttpSession session) {
-        Provider provider = new Provider();
-        provider.setProCode(proCode);
-        provider.setProName(proName);
-        provider.setProContact(proContact);
-        provider.setProPhone(proPhone);
-        provider.setProFax(proFax);
-        provider.setProAddress(proAddress);
-        provider.setProDesc(proDesc);
+    public String addProvider(Provider provider, HttpSession session) {
         provider.setCreatedBy(((User)session.getAttribute(Constants.USER_SESSION)).getId());
         provider.setCreationDate(new Date());
         boolean flag = false;
