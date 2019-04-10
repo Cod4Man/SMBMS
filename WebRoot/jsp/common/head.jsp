@@ -30,10 +30,10 @@
          <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
          <nav>
              <ul class="list">
-                 <li ><a href="${pageContext.request.contextPath }/bill/query">订单管理</a></li>
-              <li><a href="${pageContext.request.contextPath }/provide/query">供应商管理</a></li>
-              <li><a href="${pageContext.request.contextPath }/user/query">用户管理</a></li>
-              <li><a href="${pageContext.request.contextPath }/user/goPwdmodify">密码修改</a></li>
+                 <li ><a href="${pageContext.request.contextPath }/sys/bill/query">订单管理</a></li>
+              <li><a href="${pageContext.request.contextPath }/sys/provide/query">供应商管理</a></li>
+              <li><a href="${pageContext.request.contextPath }/sys/user/query">用户管理</a></li>
+              <li><a href="${pageContext.request.contextPath }/sys/user/goPwdmodify">密码修改</a></li>
               <li><a href="${pageContext.request.contextPath }/login/logout">退出系统</a></li>
              </ul>
          </nav>

@@ -1,5 +1,6 @@
 package cn.smbms.controller.bill;
 
+import cn.smbms.controller.BaseController;
 import cn.smbms.pojo.Bill;
 import cn.smbms.pojo.Provider;
 import cn.smbms.pojo.User;
@@ -14,10 +15,7 @@ import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import sun.security.jca.Providers;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,8 +32,8 @@ import java.util.*;
  * Time:9:24
  */
 @Controller
-@RequestMapping(value = "/bill",produces = "text/html;charset=UTF-8")
-public class BillController {
+@RequestMapping(value = "/sys/bill"/*,produces = "text/html;charset=UTF-8"*/)
+public class BillController extends BaseController {
     @Autowired
     private BillService billService;
     @Autowired
@@ -56,8 +54,8 @@ public class BillController {
     public String goBillAdd(@ModelAttribute("bill") Bill bill) {
         return "jsp/billadd";
     }
-    @RequestMapping(value = "/goModify")
-    public String goModify(@ModelAttribute("bill") Bill bill2, @RequestParam String billid, Model model) {
+    @RequestMapping(value = "/goModify/{billid}")
+    public String goModify(@ModelAttribute("bill") Bill bill2, @PathVariable String billid, Model model) {
         String id = billid;
         if (!StringUtils.isNullOrEmpty(id)) {
             Bill bill = billService.getBillById(id);
@@ -202,8 +200,8 @@ System.out.println("listJson===" + JSONArray.toJSONString(providerList));
         return JSONArray.toJSONString(providerList);
     }
 
-    @RequestMapping(value = "/view")
-    public String view(@RequestParam String billid, Model model) {
+    @RequestMapping(value = "/view/{billid}")
+    public String view(@PathVariable String billid, Model model) {
         String id = billid;
         if (!StringUtils.isNullOrEmpty(id)) {
             Bill bill = billService.getBillById(id);

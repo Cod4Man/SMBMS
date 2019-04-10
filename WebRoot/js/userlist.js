@@ -4,7 +4,7 @@ var userObj;
 function deleteUser(obj){
 	$.ajax({
 		type:"GET",
-		url:path+"/user/deluser",
+		url:path+"/sys/user/deluser",
 		data:{uid:obj.attr("userid")},
 		dataType:"text",
 		success:function(data){
@@ -50,12 +50,12 @@ $(function(){
 	$(".viewUser").on("click",function(){
 		//将被绑定的元素（a）转换成jquery对象，可以使用jquery方法
 		var obj = $(this);
-		window.location.href=path+"/user/view?userid="+ obj.attr("userid");
+		window.location.href=path+"/sys/user/view/"+ obj.attr("userid");
 	});
 	
 	$(".modifyUser").on("click",function(){
 		var obj = $(this);
-		window.location.href=path+"/user/modify?method=modify&userid="+ obj.attr("userid");
+		window.location.href=path+"/sys/user/modify/"+ obj.attr("userid");
 	});
 
 	$('#no').click(function () {

@@ -46,13 +46,18 @@ public class LoginController {
             //放入session
             session.setAttribute(Constants.USER_SESSION, user);
             //页面跳转（frame.jsp）
-            return "jsp/frame";
+            return "redirect:sys/main";
         } else {
             //页面跳转（login.jsp）带出提示信息--转发
             //            request.setAttribute("error", "用户名或密码不正确");
             model.addAttribute("error", "用户名或密码不正确");
             return "error";
         }
+    }
+
+    @RequestMapping(value = "/sys/main")
+    public String mian() {
+        return "jsp/frame";
     }
     
     /**

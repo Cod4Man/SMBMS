@@ -8,7 +8,7 @@
             <span>供应商管理页面 >> 供应商添加页面</span>
         </div>
         <div class="providerAdd">
-           <form id="providerForm" name="providerForm" method="post" action="${pageContext.request.contextPath }/provide/add">
+           <form id="providerForm" name="providerForm" method="post" action="${pageContext.request.contextPath }/sys/provide/add">
 			<%--<input type="hidden" name="method" value="add">--%>
                 <!--div的class 为error是验证错误，ok是验证成功-->
                 <div class="">

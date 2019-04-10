@@ -7,7 +7,7 @@
                 <span>密码修改页面</span>
             </div>
             <div class="providerAdd">
-                <form id="userForm" name="userForm" method="post" action="${pageContext.request.contextPath }/user/savepwd">
+                <form id="userForm" name="userForm" method="post" action="${pageContext.request.contextPath }/sys/user/savepwd">
                     <%--<input type="hidden" name="method" value="savepwd">--%>
                     <!--div的class 为error是验证错误，ok是验证成功-->
                     <div class="info">${message}</div>

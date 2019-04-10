@@ -15,13 +15,6 @@
     <!--使用配置文件+注解进行批量映射-->
     <context:component-scan base-package="cn.smbms.controller"/>
     <mvc:annotation-driven/>
-    <!--配置视图解析器-->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <!--前缀-->
-        <property name="prefix" value="/"/>
-        <!--后缀-->
-        <property name="suffix" value=".jsp"/>
-    </bean>
 
     <!--全局异常处理-->
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
@@ -31,11 +24,75 @@
         </props>
     </property>
 </bean>
+
+    <!--配置多视图解析器：允许同一的内容数据呈现出不同的view-->
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="viewResolvers">
+            <list>
+                <!--配置视图解析器-->
+                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <!--前缀-->
+                    <property name="prefix" value="/"/>
+                    <!--后缀-->
+                    <property name="suffix" value=".jsp"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <!--拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/user/**"/>
+            <bean class="cn.smbms.interceptor.SysInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
     <!--过滤资源路径-->
     <mvc:resources mapping="/images/**" location="/images/"/>
     <mvc:resources mapping="/js/**" location="/js/"/>
     <mvc:resources mapping="/css/**" location="/css/"/>
     <mvc:resources mapping="/calendar/**" location="/calendar/"/>
+
+    <!--自定义转换器-->
+    <bean id="myConversionService" class="org.springframework.context.support.ConversionServiceFactoryBean" >
+        <property name="converters">
+            <list>
+                <bean  class="cn.smbms.tools.DateFormatConverter">
+                    <constructor-arg type="java.lang.String" value="yyyy-MM-dd"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <!--消息转换器，解决JSON等数据传输的中文乱码/日期格式问题 ;自定义日期转换器conversion-service="myConversion_Str2Date"-->
+    <mvc:annotation-driven ><!--conversion-service="myConversionService">-->
+        <mvc:message-converters >
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json</value>
+                    </list>
+                </property>
+                <property name="features">
+                    <list>
+                        <value>WriteDateUseDateFormat</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!--配置MultipartResolver, 用于文件上传-->
+    <!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="5000000"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>-->
     <!--也可以通过<mvc:interceptors>操作-->
     <!--AOP切面-->
     <!--<aop:aspectj-autoproxy/>-->
