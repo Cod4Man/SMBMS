@@ -30,7 +30,7 @@ $(function(){
 	
 	$.ajax({
 		type:"GET",//请求类型
-		url:path+"/user/getrolelist",//请求的url
+		url:path+"/sys/user/getrolelist",//请求的url
 		dataType:"json",//ajax接口（请求url）返回的数据类型
 		success:function(data){//data：返回数据（json对象）
 			if(data != null){
@@ -61,11 +61,11 @@ $(function(){
 		//user.do?method=ucexist&userCode=**
 		$.ajax({
 			type:"GET",//请求类型
-			url:path+"/user/ucexist",//请求的url
+			url:path+"/sys/user/ucexist",//请求的url
 			data:{userCode:userCode.val()},//请求参数
-			dataType:"text",//ajax接口（请求url）返回的数据类型
+			dataType:"json",//ajax接口（请求url）返回的数据类型
 			success:function(data){//data：返回数据（json对象）
-				if(data == "exist"){//账号已存在，错误提示
+				if(data.result == "exist"){//账号已存在，错误提示
 					validateTip(userCode.next(),{"color":"red"},imgNo+ " 该用户账号已存在",false);
 				}else{//账号可用，正确提示
 					validateTip(userCode.next(),{"color":"green"},imgYes+" 该账号可以使用",true);

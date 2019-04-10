@@ -8,7 +8,7 @@
           <span>供应商管理页面 >> 供应商修改页</span>
       </div>
       <div class="providerAdd">
-          <form id="providerForm" name="providerForm" method="post" action="${pageContext.request.contextPath }/provide/domodify">
+          <form id="providerForm" name="providerForm" method="post" action="${pageContext.request.contextPath }/sys/provide/domodify">
               <!--div的class 为error是验证错误，ok是验证成功-->
               <div class="">
                   <label for="proCode">供应商编码：</label>

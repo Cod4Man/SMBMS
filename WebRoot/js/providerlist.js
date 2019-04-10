@@ -4,7 +4,7 @@ var providerObj;
 function deleteProvider(obj){
 	$.ajax({
 		type:"GET",
-		url:path+"/provide/delprovider",
+		url:path+"/sys/provide/delprovider",
 		data:"proid=" + obj.attr("proid"),
 		dataType:"text",
 		success:function(data){
@@ -46,12 +46,12 @@ $(function(){
 	$(".viewProvider").on("click",function(){
 		//将被绑定的元素（a）转换成jquery对象，可以使用jquery方法
 		var obj = $(this);
-		window.location.href=path+"/provide/view?proid="+ obj.attr("proid");
+		window.location.href=path+"/sys/provide/view/"+ obj.attr("proid");
 	});
 	
 	$(".modifyProvider").on("click",function(){
 		var obj = $(this);
-		window.location.href=path+"/provide/modify?method=modify&proid="+ obj.attr("proid");
+		window.location.href=path+"/sys/provide/modify/"+ obj.attr("proid");
 	});
 
 	$('#no').click(function () {

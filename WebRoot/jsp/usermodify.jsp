@@ -7,7 +7,7 @@
             <span>用户管理页面 >> 用户修改页面</span>
         </div>
         <div class="providerAdd">
-        <form id="userForm" name="userForm" method="post" action="${pageContext.request.contextPath }/user/modifyexe">
+        <form id="userForm" name="userForm" method="post" action="${pageContext.request.contextPath }/sys/user/modifyexe">
 			<%--<input type="hidden" name="method" value="">--%>
 			<input type="hidden" name="id" value="${user.id }"/>
 			 <div>

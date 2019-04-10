@@ -4,7 +4,7 @@ var billObj;
 function deleteBill(obj){
 	$.ajax({
 		type:"GET",
-		url:"/bill/delbill",
+		url:"/sys/bill/delbill",
 		data:{billid:obj.attr("billid")},
 		dataType:"text",
 		success:function(data){
@@ -44,12 +44,12 @@ $(function(){
 	$(".viewBill").on("click",function(){
 		//将被绑定的元素（a）转换成jquery对象，可以使用jquery方法
 		var obj = $(this);
-		window.location.href=path+"/bill/view?billid="+ obj.attr("billid");
+		window.location.href=path+"/sys/bill/view/"+ obj.attr("billid");
 	});
 	
 	$(".modifyBill").on("click",function(){
 		var obj = $(this);
-		window.location.href=path+"/bill/goModify?billid="+ obj.attr("billid");
+		window.location.href=path+"/sys/bill/goModify/"+ obj.attr("billid");
 	});
 	$('#no').click(function () {
 		cancleBtn();

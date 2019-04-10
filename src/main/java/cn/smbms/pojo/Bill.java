@@ -15,10 +15,10 @@ public class Bill {
 	private BigDecimal totalPrice; //总金额
 	private Integer isPayment; //是否支付
 	private Integer createdBy; //创建者
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date creationDate; //创建时间
 	private Integer modifyBy; //更新者
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date modifyDate;//更新时间
 	private Integer providerId; //供应商ID
 

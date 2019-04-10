@@ -8,7 +8,7 @@
             <span>用户管理页面 >> 用户添加页面</span>
         </div>
         <div class="providerAdd">
-            <form id="userForm" name="userForm" method="post" action="${pageContext.request.contextPath }/user/add">
+            <form id="userForm" name="userForm" method="post" action="${pageContext.request.contextPath }/sys/user/add">
 				<%--<input type="hidden" name="method" value="add">--%>
                 <!--div的class 为error是验证错误，ok是验证成功-->
                 <div>
@@ -69,4 +69,4 @@
 </div>
 </section>
 <%@include file="/jsp/common/foot.jsp" %>
-<script type="text/javascript" src="${pageContext.request.contextPath }/js/useradd.js?v=0.1"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/useradd.js?v=0.2"></script>

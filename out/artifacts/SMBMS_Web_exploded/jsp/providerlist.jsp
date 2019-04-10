@@ -8,7 +8,7 @@
             <span>供应商管理页面</span>
         </div>
         <div class="search">
-        	<form method="get" action="${pageContext.request.contextPath }/provide/query">
+        	<form method="get" action="${pageContext.request.contextPath }/sys/provide/query">
 				<%--<input name="method" value="query" type="hidden">--%>
 				<span>供应商编码：</span>
 				<input name="queryProCode" type="text" value="${queryProCode }">
@@ -17,7 +17,7 @@
 				<input name="queryProName" type="text" value="${queryProName }">
 				
 				<input value="查 询" type="submit" id="searchbutton">
-				<a href="${pageContext.request.contextPath }/provide/goProviderAdd">添加供应商</a>
+				<a href="${pageContext.request.contextPath }/sys/provide/goProviderAdd">添加供应商</a>
 			</form>
         </div>
         <!--供应商操作表格-->
@@ -79,4 +79,4 @@
 </div>
 
 <%@include file="/jsp/common/foot.jsp" %>
-<script type="text/javascript" src="${pageContext.request.contextPath }/js/providerlist.js?v=0.97"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/providerlist.js?v=0.98"></script>

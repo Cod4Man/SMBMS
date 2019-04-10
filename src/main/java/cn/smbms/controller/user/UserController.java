@@ -1,5 +1,6 @@
 package cn.smbms.controller.user;
 
+import cn.smbms.controller.BaseController;
 import cn.smbms.pojo.Role;
 import cn.smbms.pojo.User;
 import cn.smbms.service.role.RoleService;
@@ -11,10 +12,7 @@ import com.mysql.jdbc.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.text.ParseException;
@@ -31,14 +29,16 @@ import java.util.List;
  * Time:14:23
  */
 @Controller
-@RequestMapping(value = "/user", produces = "text/html;charset=UTF-8")
-public class UserController {
+@RequestMapping(value = "/sys/user"/*, produces = "text/html;charset=UTF-8"*/)
+public class UserController extends BaseController {
     @Autowired
     private UserService userService;
     @Autowired
     private RoleService roleService;
 
+
     //页面跳转=====================
+
     /**
      * 页面跳转至修改密码页面
      * @param
@@ -68,28 +68,52 @@ public class UserController {
             return "/jsp/usermodify";
         }
     }
+
     /**
-     *  用户的修改查看页面跳转（携带对象）
+     * 使用REST风格的用户详情查看
      * @param userid
-     * @param method
      * @param model
-     * @return
+     * @return java.lang.String
+     * @author zhj
+     * @creed: Talk is cheap,show me the code
+     * @date 2019/3/29
      */
-    @RequestMapping(value = {"/view","/modify"})
-    public String getUserById(@RequestParam String userid,@RequestParam(required = false) String method, Model model) {
-        System.out.println("view & modify");
+    @RequestMapping(value = {"/view/{userid}"},method = RequestMethod.GET)
+    public String view(@PathVariable String userid,
+                       Model model) {
+        System.out.println("view  By REST");
         String id = userid;
         if (!StringUtils.isNullOrEmpty(id)) {
             //调用后台方法得到user对象
             User user = userService.getUserById(id);
             model.addAttribute(user);
         }
-        if ("modify".equals(method)) {
-            return "jsp/usermodify";
-        } else {
-            return "jsp/userview";
-        }
+        return "jsp/userview";
     }
+
+    /**
+     * 使用REST风格的用户修改页面跳转
+     * @param userid
+     * @param model
+     * @return java.lang.String
+     * @author zhj
+     * @creed: Talk is cheap,show me the code
+     * @date 2019/3/29
+     */
+    @RequestMapping(value = "/modify/{userid}",method = RequestMethod.GET)
+    public String modify(@PathVariable String userid,
+                         Model model) {
+        System.out.println("modify By REST");
+        String id = userid;
+        if (!StringUtils.isNullOrEmpty(id)) {
+            //调用后台方法得到user对象
+            User user = userService.getUserById(id);
+            model.addAttribute(user);
+        }
+        return "jsp/usermodify";
+    }
+
+
     /**
      *  添加用户
      * @param session
@@ -266,20 +290,21 @@ public class UserController {
      */
     @RequestMapping(value = "/ucexist")
     @ResponseBody
-    public String ucexist(@RequestParam String userCode) {
+    public Object ucexist(@RequestParam String userCode) {
         //判断用户账号是否可用
         HashMap<String, String> resultMap = new HashMap<String, String>();
         if (StringUtils.isNullOrEmpty(userCode)) {
             //userCode == null || userCode.equals("")
-            return  "exist";
+            resultMap.put("result", "exist");
         } else {
             User user = userService.selectUserCodeExist(userCode);
             if (null != user) {
-                return "exist";
+                resultMap.put("result", "exist");
             } else {
-                return "notexist";
+                resultMap.put("result", "notexist");
             }
         }
+        return JSONArray.toJSONString(resultMap);
     }
     /**
      * Ajax返回roleList
